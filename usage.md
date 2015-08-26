@@ -68,3 +68,7 @@ The `pageId` parameter should be set to an unique identifier (int/string) for ea
 ### Admin Panel
 
 To access the Admin Panel make sure the user that you're logged in with has the `role` field set to `admin` in the database.
+
+### Demo
+
+You can find the [demo](http://laravel-comments.demo.hazzardweb.com/) setup on [GitHub](https://github.com/hazzardweb/laravel-comments-demo). Just make sure to create that `comments` folder in your `app` directory and copy the files as described in the [Installation](installation.md) section.
