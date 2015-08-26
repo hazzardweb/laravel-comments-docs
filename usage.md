@@ -67,7 +67,7 @@ The `pageId` parameter should be set to an unique identifier (int/string) for ea
 
 ### Admin Panel
 
-To access the Admin Panel make sure the user that you're logged in with has the `role` field set to `admin` in the database.
+You can access the Admin Panel at `/comments/admin`, but make sure the user that you're logged in with has the `role` field set to `admin` in the database.
 
 ### Demo
 
