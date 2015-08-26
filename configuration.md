@@ -37,7 +37,7 @@ Because it uses the [jBBCode](http://jbbcode.com) package you can add any other 
 You can add the tags in `comments/src/Formatting/BBCodeDefinitionSet.php`, or/and if you need the parser instance (`JBBCode\Parser`) you can access like this:
 
 ```php
-$parser = app('comments.formatter')->bbcode;
+$parser = app('comments.formatter')->getBBCode();
 ```
 
 Please refer to the [JBBCode documentation](http://jbbcode.com) for more.
