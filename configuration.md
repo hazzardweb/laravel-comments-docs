@@ -1,7 +1,6 @@
 # Configuration
 
 - [reCAPTCHA](#recaptcha)
-- [Smilies](#smilies)
 - [BBCode](#bbcode)
 
 All of the configuration options for the Laravel Comments are stored in `config/comments.php`.
@@ -20,14 +19,6 @@ Run `php artisan vendor:publish --provider="Marwelln\Recaptcha\RecaptchaServiceP
 Get your recaptcha keys at [google.com/recaptcha/admin](https://www.google.com/recaptcha/admin) and copy them in `config/recaptcha.php`.
 
 Now you can enable the `captcha` option in `config/comments.php` or from the __Settings__ page under the __Protection__ tab.
-
-## Smilies
-
-To use the smilies you need some smiley images, because the script __does not__ include any. I recommend [this pack](http://graphicriver.net/item/matte-motes-emoticon-set/33923), but any will do.
-
-First copy your smiley images to `public/smilies` and edit `config/smilies.php` to uncomment the smiley images mapping or add your mapping to your smilies images.
-
-Now you can enable them in `config/comments.php` by setting the `smilies` option to `true` or from the __Settings__ page under the __Formatting__ tab.
 
 ## BBCode
 
