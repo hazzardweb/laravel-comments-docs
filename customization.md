@@ -3,6 +3,7 @@
 - [Assets](#assets)
 - [Views](#views)
 - [Translations](#translations)
+- [Not Found Exceptions](#not-found-exceptions)
 
 ## Assets
 
@@ -21,3 +22,18 @@ If you wish to customize the views copy the view files from `comments/resources/
 ## Translations
 
 See [Overriding Vendor Language Files](http://laravel.com/docs/5.1/localization#overriding-vendor-language-files).
+
+## Not Found Exceptions
+
+To catch `ModelNotFoundException` exceptions edit `app/Exceptions/Handler.php` and add in the `render` method:
+
+```php
+public function render($request, Exception $e)
+{
+    if ($e instanceof \Illuminate\Database\Eloquent\ModelNotFoundException && $request->ajax()) {
+        return response()->json('Not found.', 404);
+    }
+
+    return parent::render($request, $e);
+}
+```

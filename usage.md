@@ -2,31 +2,37 @@
 
 <hr>
 
-### The Author Interface
+### The Get Author Method
 
-Your `User` class/model must implement the `Hazzard\Comments\Author\AuthorContract` interface. This interface imposes these methods: `getAuthorName`, `getAuthorEmail`, `getAuthorAvatar`, `getAuthorUrl` and `userIsAdmin`. <br>
+In your `User` class/model you must add the `getAuthor` method that has to return some user attributes: 
 
-If you have a standard `User` model just import the `Hazzard\Comments\Author\Author` trait and you should be good to go. This trait will use the `name` or `username` fields for the `getAuthorName` method, the `email` field for the `getAuthorEmail` and `getAuthorAvatar` methods and the `role` field for the `userIsAdmin` method.
-
-__Example:__
 ```php
-...
-use Hazzard\Comments\Author\Author;
-use Hazzard\Comments\Author\AuthorContract;
-
-use Illuminate\Database\Eloquent\Model;
-...
-
-class User extends Model implements ..., AuthorContract // <= Implement interface
+class User extends Model implements ...
 {
-    use ..., Author; // <= Import trait
-    ...
+    /**
+     * Return the user attributes.
+
+     * @return array
+     */
+    public function getAuthor()
+    {
+        return [
+            'id'     => $this->id,
+            'name'   => $this->name,
+            'email'  => $this->email,
+            'url'    => $this->url,  // Optional
+            'avatar' => 'gravatar',
+            'admin'  => $this->role === 'admin', // bool
+        ];
+    }
 }
 ```
 
-Of course you can implement the methods by yourself.
+By default the avatar is set to Gravatar, but you can return an image.
 
-### Include the CSS files
+The `admin` attribute makes use of the `role` field, added to the users table in the [installation](#installation.md) part. <br> If you have another way of detecting if the user is admin, then the `admin` attribute must a boolean value.
+
+### Include The CSS Files
 
 ```markup
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -41,7 +47,7 @@ Of course you can implement the methods by yourself.
 
 <style>.callout-info p:first-child { display: none; }</style>
 
-### Include the JavaScript files
+### Include The JavaScript Files
 
 ```markup
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -55,9 +61,9 @@ If you have already included jQuery or Bootstrap JS you don't have to include th
 Even if your app doesn't use Bootstrap, the `bootstrap.min.js` file is still required.
 
 > Notice: 
-> Make sure you you have the [Authentication](authentication.md) configured.
+> Make sure you you have the [Laravel Authentication](http://laravel.com/docs/5.1/authentication) driver configured.
 
-### Display the Comments
+### Display The Comments
 
 ```php
 @include('comments::display', ['pageId' => 'page1'])
@@ -65,10 +71,14 @@ Even if your app doesn't use Bootstrap, the `bootstrap.min.js` file is still req
 
 The `pageId` parameter should be set to an unique identifier (int/string) for each page. 
 
-### Admin Panel
+### Access The Admin Panel
 
 You can access the Admin Panel at `/comments/admin`, but make sure the user that you're logged in with has the `role` field set to `admin` in the database.
 
-### Demo
+If you have something like `phpMyAdmin` just edit the role field or you can write a simple query to edit a user:
 
-You can find the [demo](http://laravel-comments.demo.hazzardweb.com/) setup on [GitHub](https://github.com/hazzardweb/laravel-comments-demo). Just make sure to create that `comments` folder in your `app` directory and copy the files as described in the [Installation](installation.md) section.
+```php
+$user = \App\User::find(1);
+$user->role = 'admin';
+$user->save();
+```

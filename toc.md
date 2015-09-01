@@ -7,7 +7,7 @@
 
 - The Basics
 	- [Usage](usage.md)
-    - [Authentication](authentication.md)
+    - [Events](events.md)
     - [Customization](customization.md)
     - [Debugging](debugging.md)
 
