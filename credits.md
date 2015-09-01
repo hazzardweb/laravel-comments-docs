@@ -1,6 +1,6 @@
 # Credits
 
-Laravel Comments uses the following assets and libraries:
+Ajax Comment System for Laravel uses the following assets and libraries:
 
 ### Front-end
 - [Vue](http://vuejs.org)
@@ -8,9 +8,10 @@ Laravel Comments uses the following assets and libraries:
 - [jQuery](http://jquery.com)
 - [Autosize](http://www.jacklmoore.com/autosize)
 - [Bootstrap](http://getbootstrap.com)
+- [Twitter Emoji](https://github.com/twitter/twemoji)
 - [jQuery Timeago](http://timeago.yarp.com)
 
 ### Back-end
-- [jBBCode](https://github.com/jbowens/jBBCode)
-- [Parsedown](https://github.com/erusev/parsedown)
+- [Laravel](http://laravel.com)
+- [TextFormatter](https://github.com/s9e/TextFormatter)
 - [reCAPTCHA](https://github.com/Marwelln/recaptcha)
