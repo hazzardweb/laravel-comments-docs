@@ -168,7 +168,7 @@ The comment will be deleted and the response status will be a `204`.
 
 ### Admin Settings Endpoints
 
-To update the settings, send a __PUT__ request to `comments/admin/settings` and you must specify two attributes:
+To update the settings, send a __PUT__ request to `/comments/admin/settings` and you must specify two attributes:
 
 A key called `group`, that can have one of the values `general`, `formatting`, `moderation`, `protection`, `notifications`.
 
