@@ -9,6 +9,7 @@
 	- [Usage](usage.md)
     - [Events](events.md)
     - [Customization](customization.md)
+    - [REST API](restapi.md)
     - [Debugging](debugging.md)
 
 -
