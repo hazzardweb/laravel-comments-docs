@@ -52,7 +52,6 @@ The `admin` attribute makes use of the `role` field, added to the users table in
 ```markup
 <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.3/jquery.timeago.min.js"></script>
 <script src="//cdn.jsdelivr.net/vue/1.0.16/vue.min.js"></script>
 
 <!-- Must be included before the closing </body> tag! -->
