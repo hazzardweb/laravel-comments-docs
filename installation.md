@@ -18,7 +18,7 @@ This guide assumes that you already know how to [install](http://laravel.com/doc
 ```
 And this one to your dependencies (`require`): 
 ```php
-"s9e/text-formatter": "^0.2.1"
+"s9e/text-formatter": "^0.4"
 ```
 In your terminal/console run `composer install`.
 3. Add `'Hazzard\Comments\CommentsServiceProvider'` to your `providers` array in `config/app.php` and run:
@@ -50,6 +50,6 @@ Now you can continue with the [normal installation](#install-ajax-comment-system
 
 ### Requirements and Browser Support
 
-Laravel Comments requires Laravel 5.1.9 and supports the following browsers (desktop and mobile): Chrome, Firefox, Opera, Safari MS Edge and IE9+.
+Laravel Comments requires Laravel >= 5.1.9 and supports the following browsers (desktop and mobile): Chrome, Firefox, Opera, Safari MS Edge and IE9+.
 
 <style>.docs-content ol { padding-left: 20px; }</style>

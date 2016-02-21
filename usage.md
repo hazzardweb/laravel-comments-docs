@@ -35,7 +35,7 @@ The `admin` attribute makes use of the `role` field, added to the users table in
 ### Include The CSS Files
 
 ```markup
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="/vendor/comments/css/prism-okaidia.css"> <!-- Optional -->
 <link rel="stylesheet" href="/vendor/comments/css/comments.css">
 ```
@@ -50,15 +50,20 @@ The `admin` attribute makes use of the `role` field, added to the users table in
 ### Include The JavaScript Files
 
 ```markup
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="/vendor/comments/js/prism.js"></script> <!-- Optional -->
-<!-- This must be included before the closing </body> tag! -->
-<script src="/vendor/comments/js/comments.js"></script> 
+<script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.3/jquery.timeago.min.js"></script>
+<script src="//cdn.jsdelivr.net/vue/1.0.16/vue.min.js"></script>
+
+<!-- Must be included before the closing </body> tag! -->
+<script src="/vendor/comments/js/utils.js"></script> 
+<script src="/vendor/comments/js/comments.js"></script>
+<script>new Vue({el: '#comments'});</script>
 ```
 
-If you have already included jQuery or Bootstrap JS you don't have to include them again. <br>
-Even if your app doesn't use Bootstrap, the `bootstrap.min.js` file is still required.
+- If you have already included jQuery, Bootstrap JS or Vue, you don't have to include them again.
+- Even if your app doesn't use Bootstrap, the `bootstrap.min.js` file is still required. 
+- If you are using [Vue](http://vuejs.org/), and have an instance already, you don't have to create a new instance again.
 
 > Notice: 
 > Make sure you you have the [Laravel Authentication](http://laravel.com/docs/5.1/authentication) driver configured.
@@ -66,10 +71,12 @@ Even if your app doesn't use Bootstrap, the `bootstrap.min.js` file is still req
 ### Display The Comments
 
 ```php
-@include('comments::display', ['pageId' => 'page1'])
+@include('comments::display', ['pageId' => 'page1', 'id' => '#comments'])
 ```
 
 The `pageId` parameter should be set to an unique identifier (int/string) for each page. 
+
+The `id` parameter is optional.
 
 ### Access The Admin Panel
 
