@@ -15,13 +15,15 @@ Now you can edit the JavaScript/Sass files and [run Elixir](http://laravel.com/d
 
 Each time the assets are compiled you have to run `php artisan vendor:publish --tag="public" --force` to override them in your public directory. 
 
-Or you edit the `gulpfile.js` file and change the `jsDest` and `cssDest` variables:
+Or you edit the `gulpfile.js` and change the `jsDest` and `cssDest` variables:
 
 ```javascript
 var jsDest  = '../../public/vendor/comments/js/';
 var cssDest = '../../public/vendor/comments/css/';
 ```
 _Assuming that you have the `comments` folder in your `app` directory._
+
+To enable the source maps set `elixir.config.sourcemaps = true;` in the `gulpfile.js`.
 
 ## Views
 

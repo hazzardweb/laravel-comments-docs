@@ -63,7 +63,8 @@ The `admin` attribute makes use of the `role` field, added to the users table in
 
 - If you have already included jQuery, Bootstrap JS or Vue, you don't have to include them again.
 - Even if your app doesn't use Bootstrap, the `bootstrap.min.js` file is still required. 
-- If you are using [Vue](http://vuejs.org/), and have an instance already, you don't have to create a new instance again.
+- If you are using [Vue](http://vuejs.org/), and have an instance already, you don't have to create a new one again.
+- You can use `comments.min.js` if you want the minified version.
 
 > Notice: 
 > Make sure you you have the [Laravel Authentication](http://laravel.com/docs/5.1/authentication) driver configured.
