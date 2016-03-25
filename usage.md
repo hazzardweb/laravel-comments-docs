@@ -71,7 +71,7 @@ The `admin` attribute makes use of the `role` field, added to the users table in
 ### Display The Comments
 
 ```php
-@include('comments::display', ['pageId' => 'page1', 'id' => '#comments'])
+@include('comments::display', ['pageId' => 'page1', 'id' => 'comments'])
 ```
 
 The `pageId` parameter should be set to an unique identifier (int/string) for each page. 
