@@ -13,11 +13,13 @@ This guide assumes that you already know how to [install](http://laravel.com/doc
 
 1. In your `app` directory, create a `comments` folder and extract all the files from the archive you have downloaded from CodeCanyon.
 
- *If you use Laravel 5.2, edit `app/comments/src/Http/routes.php` and add the `web` middleware:
+*If you use Laravel >= 5.2, edit `app/comments/src/Http/routes.php` and add the `web` middleware:
 
  ```php
 Route::group(['namespace' => 'Hazzard\Comments...', 'middleware' => 'web'], function ($router)
 ```
+
+*If you you use Laravel 5.3 edit each file from `app/comments/src/Jobs/` and remove `implements SelfHandling`.
 
 2. Edit your `composer.json` file and add the following line to the `psr-4` autoload:
 
