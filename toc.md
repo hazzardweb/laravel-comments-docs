@@ -1,5 +1,5 @@
 - Prologue
-    - [Release Notes](releases.md)
+    - [Release Notes](changelog.md)
 	- [Upgrade Guide](upgrade.md)
 
 - Setup
