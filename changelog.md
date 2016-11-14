@@ -9,6 +9,10 @@
 
 You can get the latest updates from [git.hazzardweb.com](https://git.hazzardweb.com). Just log in with your Envato account and you can browse the __Ajax Comment System for Laravel__ repository and see all the changes that were made.
 
+## Ajax Comment System 1.2.1
+
+- Fix Laravel 5.3 compatibility.
+
 ## Ajax Comment System 1.2
 
 - Added Laravel 5.3 compatibility.
