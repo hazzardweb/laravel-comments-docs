@@ -1,31 +1,16 @@
-# Release Notes
+# Changelog
 
-- [Git Updates](#git-updates)
-- [Ajax Comment System 1.2](#ajax-comment-system-12)
-- [Ajax Comment System 1.1](#ajax-comment-system-11)
-- [Ajax Comment System 1.0](#ajax-comment-system-10)
+### Git
 
-## Git Updates
+To get the latest updates go to [git.hazzardweb.com](https://git.hazzardweb.com), log in with your Envato account and then browse repository.
 
-You can get the latest updates from [git.hazzardweb.com](https://git.hazzardweb.com). Just log in with your Envato account and you can browse the __Ajax Comment System for Laravel__ repository and see all the changes that were made.
+## 2.0.0-beta-1
 
-## Ajax Comment System 1.2.1
+The script has been rewritten from scratch. It now uses a iframe to embed the comments so it doesn't interfere anymore with the app you're using the comments in. The script now requires Laravel 5.3+.
 
-- Fix Laravel 5.3 compatibility.
+New Features:
 
-## Ajax Comment System 1.2
-
-- Added Laravel 5.3 compatibility.
-- Fixed potential JSON error in admin.
-
-## Ajax Comment System 1.1
-
-- Upgrade to Vue 1.0.
-- Refactor components.
-- Switch to Sass.
-- Update dependencies.
-- Remove bower.
-
-## Ajax Comment System 1.0
-
-- Initial release.
+- Bootstrap 4 
+- Embed via iframe
+- Comment reports
+- Support for commentable models.

@@ -1,17 +1,26 @@
 # Credits
 
-Ajax Comment System for Laravel uses the following assets and libraries:
+Laravel Comments uses the following libraries:
 
 ### Front-end
-- [Vue](http://vuejs.org)
+- [Vue 2](http://vuejs.org)
 - [Prism](http://prismjs.com)
-- [jQuery](http://jquery.com)
 - [Autosize](http://www.jacklmoore.com/autosize)
-- [Bootstrap](http://getbootstrap.com)
+- [Bootstrap 4](http://getbootstrap.com)
+- [axios](https://github.com/mzabriskie/axios)
+- [iFrame Resizer](https://github.com/davidjbradshaw/iframe-resizer)
+- [Laravel Echo](https://github.com/tlaverdure/laravel-echo-server)
 - [Twitter Emoji](https://github.com/twitter/twemoji)
-- [jQuery Timeago](http://timeago.yarp.com)
+- [SweetAlert2](https://github.com/limonte/sweetalert2)
+- [vue-timeago](https://github.com/egoist/vue-timeago)
+- [vue-timeago](https://github.com/egoist/vue-timeago)
+- [vue-i18n](https://github.com/kazupon/vue-i18n)
+- [Zenscroll](https://github.com/zengabor/zenscroll)
+- [vform](https://github.com/cretueusebiu/vform)
+- [Laravel Mix](https://github.com/jeffreyWay/laravel-mix)
 
 ### Back-end
 - [Laravel](http://laravel.com)
 - [TextFormatter](https://github.com/s9e/TextFormatter)
-- [reCAPTCHA](https://github.com/Marwelln/recaptcha)
+- [reCAPTCHA](https://github.com/google/recaptcha)
+- [Akismet](https://github.com/OpenClassrooms/Akismet)

@@ -1,5 +1,5 @@
 - Prologue
-    - [Release Notes](changelog.md)
+    - [Changelog](changelog.md)
 	- [Upgrade Guide](upgrade.md)
 
 - Setup
@@ -10,7 +10,6 @@
 	- [Usage](usage.md)
     - [Events](events.md)
     - [Customization](customization.md)
-    - [REST API](restapi.md)
     - [Debugging](debugging.md)
 
 -

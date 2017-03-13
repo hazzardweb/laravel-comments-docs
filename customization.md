@@ -3,47 +3,46 @@
 - [Assets](#assets)
 - [Views](#views)
 - [Translations](#translations)
-- [Not Found Exceptions](#not-found-exceptions)
 
 ## Assets
 
-If you wish to edit something in the JavaScript/Sass files, you have to compile them with [Laravel Elixir](http://laravel.com/docs/5.2/elixir).
+If you wish to edit something in the JavaScript/Sass files, you have to compile them with [Laravel Mix](http://laravel.com/docs/5.4/mix).
 
-From your terminal, cd into the `comments` directory, then [install](http://laravel.com/docs/5.2/elixir#installation) Laravel Elixir (`npm install`).
+From your terminal, cd into the `laravel-comments` directory and install the npm dependencies:
 
-Now you can edit the JavaScript/Sass files and [run Elixir](http://laravel.com/docs/5.2/elixir#running-elixir) with `gulp` or `gulp watch`.
+With npm:
 
-Each time the assets are compiled you have to run `php artisan vendor:publish --tag="public" --force` to override them in your public directory. 
+```bash
+npm install
+```
 
-Or you edit the `gulpfile.js` and change the `jsDest` and `cssDest` variables:
+Or the recommended way, with [Yarn](http://yarnpkg.com/):
+
+```bash
+yarn 
+```
+
+After you make your changes run `npm run build` to compile the assets.
+
+Each time the assets are compiled you have to run `php artisan vendor:publish --provider=Hazzard\Comments\CommentsServiceProvider --tag=public --force` to override them in your public directory. 
+
+Or you edit the `webpack.mix.js` and change the `publicPath` variable:
 
 ```javascript
-var jsDest  = '../../public/vendor/comments/js/';
-var cssDest = '../../public/vendor/comments/css/';
+const publicPath  = '../public/vendor/comments'
 ```
-_Assuming that you have the `comments` folder in your `app` directory._
-
-To enable the source maps set `elixir.config.sourcemaps = true;` in the `gulpfile.js`.
+_Assuming that you have the `laravel-comments` folder in your project root directory._
 
 ## Views
 
-If you wish to customize the views copy the view files from `comments/resources/views` to `resources/vendor/comments` and edit there.
+If you wish to customize the views run:
+
+```bash
+`php artisan vendor:publish --provider=Hazzard\Comments\CommentsServiceProvider --tag=public --force`
+```
+
+Then edit them from `resources/views/vendor/comments`.
 
 ## Translations
 
-See [Overriding Vendor Language Files](http://laravel.com/docs/5.2/localization#overriding-vendor-language-files).
-
-## Not Found Exceptions
-
-To catch `ModelNotFoundException` exceptions edit `app/Exceptions/Handler.php` and add in the `render` method:
-
-```php
-public function render($request, Exception $e)
-{
-    if ($e instanceof \Illuminate\Database\Eloquent\ModelNotFoundException && $request->ajax()) {
-        return response()->json('Not found.', 404);
-    }
-
-    return parent::render($request, $e);
-}
-```
+See [Overriding Vendor Language Files](https://laravel.com/docs/5.4/localization#overriding-package-language-files).

@@ -1,68 +1,77 @@
 # Installation
 
 - [Prerequisites](#prerequisites)
-- [Install Ajax Comment System](#install-ajax-comment-system)
-- [Clone Ajax Comment System Demo](#clone-ajax-comment-system-demo)
+- [Install Laravel Comments](#install-laravel-comments)
+- [Clone Laravel Comments Demo](#clone-laravel-comments-demo)
 - [Requirements and Browser Support](#requirements-and-browser-support)
 
 ## Prerequisites
 
-This guide assumes that you already know how to [install](http://laravel.com/docs/5.1/installation) and configure Laravel.
+This guide assumes that you already know how to [install](http://laravel.com/docs/5.4/installation) and configure Laravel and have the latest version of [Composer](https://getcomposer.org/) installed.
 
-## Install Ajax Comment System
+## Install Laravel Comments
 
-1. In your `app` directory, create a `comments` folder and extract all the files from the archive you have downloaded from CodeCanyon.
+Extract the files from the archive you have downloaded from CodeCanyon into a `laravel-comments` folder in your project root.
 
-2. Edit your `composer.json` file and add the following line to the `psr-4` autoload:
+Edit your `composer.json` file and add a [local path](https://getcomposer.org/doc/05-repositories.md#path) repository:
 
- ```php
-"Hazzard\\Comments\\": "app/comments/src/"
+```json
+"repositories": [
+    {
+        "type": "path",
+        "url": "./laravel-comments"
+    }
+]
 ```
 
- And this one to your dependencies (`require`): 
+In your terminal run:
 
- ```php
-"s9e/text-formatter": "^0.4"
+```bash
+composer require hazzard/laravel-comments *@dev
 ```
 
- In your terminal/console run `composer install`.
+Next, you must install the service provider:
 
-3. Add `Hazzard\Comments\CommentsServiceProvider::class` to your `providers` array in `config/app.php` and run:
-
- ```php
-php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider"
+```php
+// config/app.php
+'providers' => [
+    ...
+    Hazzard\Comments\CommentsServiceProvider::class,
+];
 ```
 
- This command will publish the configuration file (config/comments.php), the assets folder (public/vendor/comments) and the database migrations __*__.<br>
+Run the migrate command to create the necessary tables:
 
- > Notice: The script assumes that you have already have the users table installed.
-
-4. Finally, run: 
-
- ```php
+```bash
 php artisan migrate
 ```
 
-5. Head over to the [Usage](usage.md) section to get started. 
-
-<br> 
-
-__*__ The migrations will add 3 tables `comments`, `comment_votes`, `comment_options` and a `role` field to your users table. This field will be used to determine if the the authenticated user is an admin or a regular user. <br>
-
- > Notice: If your app already has another method to determine that, then delete the `..._add_users_role_column.php` migration from the database/migrations directory.
-
-## Clone Ajax Comment System Demo
-
-You can clone the [demo version](http://acs-laravel.demo.hazzardweb.com) from the GitHub [repository](https://github.com/hazzardweb/ajax-comment-system-laravel-demo). Run:
+Publish the assets files with:
 
 ```bash
-git clone https://github.com/hazzardweb/ajax-comment-system-laravel-demo.git
+php artisan vendor:publish --provider=Hazzard\Comments\CommentsServiceProvider --tag=public
 ```
 
-Now you can continue with the [normal installation](#install-ajax-comment-system). This demo requires you to have reCAPTCHA [configured](configuration.md#recaptcha).
+You can publish the config-file with:
+
+```bash
+php artisan vendor:publish --provider=Hazzard\Comments\CommentsServiceProvider --tag=config
+```
+
+Head over to the [Usage](usage.md) section to get started.
+
+## Clone Laravel Comments Demo
+
+You can clone the [demo version](https://laravel-comments.demo.hazzardweb.com) from the GitHub [repository](https://github.com/hazzardweb/laravel-comments-demo):
+
+```bash
+git clone https://github.com/hazzardweb/laravel-comments-demo.git
+```
+
+Then you can continue with the [normal installation](#install-laravel-comments).
 
 ### Requirements and Browser Support
 
-Laravel Comments requires Laravel >= 5.1.9 and supports the following browsers (desktop and mobile): Chrome, Firefox, Opera, Safari MS Edge and IE9+.
+Laravel Comments requires Laravel >= 5.3 and supports the following browsers (desktop and mobile): Chrome, Firefox, Opera, Safari, MS Edge and IE10+.
 
 <style>.docs-content ol { padding-left: 20px; }</style>

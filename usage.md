@@ -1,91 +1,121 @@
 # Usage
 
-<hr>
+### The Author Attributes Method
 
-### The Get Author Method
-
-In your `User` class/model you must add the `getAuthor` method that has to return some user attributes: 
+In your `User` model add a `authorAttributes` method that return some user attributes: 
 
 ```php
-class User extends Model implements ...
+...
+
+class User extends Authenticatable
 {
     /**
-     * Return the user attributes.
-
      * @return array
      */
-    public function getAuthor()
+    public function authorAttributes()
     {
         return [
-            'id'     => $this->id,
-            'name'   => $this->name,
-            'email'  => $this->email,
-            'url'    => $this->url,  // Optional
-            'avatar' => 'gravatar',
-            'admin'  => $this->role === 'admin', // bool
+            'name' => $this->name,
+            'email' => $this->email,
+            'url' => $this->url,    // optional
+            'avatar' => 'gravatar', // optional
         ];
     }
 }
 ```
 
-By default the avatar is set to Gravatar, but you can return an image.
+By default the avatar is set to Gravatar, but you can return an image url.
 
-The `admin` attribute makes use of the `role` field, added to the users table in the [installation](#installation.md) part. <br> If you have another way of detecting if the user is admin, then the `admin` attribute must a boolean value.
-
-### Include The CSS Files
+### Include the CSS 
 
 ```markup
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" href="/vendor/comments/css/prism-okaidia.css"> <!-- Optional -->
-<link rel="stylesheet" href="/vendor/comments/css/comments.css">
+<link href="/vendor/comments/comments.css" rel="stylesheet">
 ```
 
-> Note: 
-> #### No Bootstrap!
-> If you don't use Bootstrap, include `/vendor/comments/css/bootstrapless.css` instead of `bootstrap.min.css`.<br>
-> By doing so, the Bootstrap CSS will be isolated to the comments and won't conflict with your CSS.
-
-<style>.callout-info p:first-child { display: none; }</style>
-
-### Include The JavaScript Files
+Or if you use Laravel 5.4+ you can make use of the `mix` helper:
 
 ```markup
-<script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="//cdn.jsdelivr.net/vue/1.0.16/vue.min.js"></script>
-
-<!-- Must be included before the closing </body> tag! -->
-<script src="/vendor/comments/js/utils.js"></script> 
-<script src="/vendor/comments/js/comments.js"></script>
-<script>new Vue({el: '#comments'});</script>
+<link href="{{ mix('comments.css', 'vendor/comments') }}" rel="stylesheet">
 ```
 
-- If you have already included jQuery, Bootstrap JS or Vue, you don't have to include them again.
-- Even if your app doesn't use Bootstrap, the `bootstrap.min.js` file is still required. 
-- If you are using [Vue](http://vuejs.org/), and have an instance already, you don't have to create a new one again.
-- You can use `comments.min.js` if you want the minified version.
+### Include the JavaScript 
 
-> Notice: 
-> Make sure you you have the [Laravel Authentication](http://laravel.com/docs/5.1/authentication) driver configured.
-
-### Display The Comments
-
-```php
-@include('comments::display', ['pageId' => 'page1', 'id' => 'comments'])
+```markup
+<script src="/vendor/comments/comments.js"></script>
 ```
 
-The `pageId` parameter should be set to an unique identifier (int/string) for each page. 
+Again, if you use Laravel 5.4+ you can make use of the `mix` helper:
 
-The `id` parameter is optional.
+```markup
+<script src="{{ mix('comments.js', 'vendor/comments') }}"></script>
+```
+
+### Display the Comments
+
+Add a `div` element with an id:
+
+```markup
+<div id="my-comments"></div>
+```
+
+Then add the JavaScript that loads the comments:
+
+```markup
+<script>
+    new Comments.default({
+        el: '#my-comments',
+        pageId: 'my-page-id'
+    })
+</script>
+```
+
+The `pageId` should be set to an unique identifier (integer or string) for each page. 
+
+If you have a ["commentable model"](https://laravel.com/docs/5.4/eloquent-relationships#polymorphic-relations), like a page or post you can use:
+
+```markup
+<script>
+    new Comments.default({
+        el: '#my-comments',
+        commentableId: {{ Page::first()->id }},
+        commentableType: 'App.Page'
+    })
+</script>
+```
+
+Where `commentableId` is your model id and the `commentableType` is your model class name.
 
 ### Access The Admin Panel
 
-You can access the Admin Panel at `/comments/admin`, but make sure the user that you're logged in with has the `role` field set to `admin` in the database.
+Make sure you you have the [Authentication](http://laravel.com/docs/5.4/authentication) configured so you can log in.
 
-If you have something like `phpMyAdmin` just edit the role field or you can write a simple query to edit a user:
+You need to define a [gate](https://laravel.com/docs/5.4/authorization#gates) to determine what users have access to the admin panel:
 
 ```php
-$user = \App\User::find(1);
-$user->role = 'admin';
-$user->save();
+// app/providers/AuthServiceProvider.php
+
+...
+
+class AuthServiceProvider extends ServiceProvider
+{
+    ...
+
+    public function boot()
+    {
+        $this->registerPolicies();
+    
+        /**
+         * Determine if the current user can access the admin panel.
+         *
+         * @param  User $user                        
+         * @return bool
+         */
+        \Gate::define('moderate-comments', function ($user) {
+            // Add your own logic here...
+            return (bool) $user->is_admin === true;
+        });
+    }
+}
 ```
+
+Now you can access the Admin Panel at `/comments/admin`.
