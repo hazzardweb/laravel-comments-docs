@@ -49,13 +49,13 @@ php artisan migrate
 Publish the assets files with:
 
 ```bash
-php artisan vendor:publish --provider=Hazzard\Comments\CommentsServiceProvider --tag=public
+php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider" --tag=public
 ```
 
 You can publish the config-file with:
 
 ```bash
-php artisan vendor:publish --provider=Hazzard\Comments\CommentsServiceProvider --tag=config
+php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider" --tag=config
 ```
 
 Head over to the [Usage](usage.md) section to get started.
