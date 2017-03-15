@@ -5,7 +5,7 @@
 ## Upgrading To 2.0 From 1.2
 
 Since this is a major update only the database tables can be upgraded.
-This means you can keep your comments but you'll have to reinstall and update the usage of the comments.
+This means you can keep your comments but you'll have to reinstall and update the usage.
 
 Run:
 
