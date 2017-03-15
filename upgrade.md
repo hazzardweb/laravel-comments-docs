@@ -17,7 +17,7 @@ php artisan cache:clear
 
 Delete `app/comments`, `public/vendor/comments` and `config/comments.php`.
 
-Edit `composer.json` and remove `"Hazzard\\Comments\\": "app/comments/src/"` and`"s9e/text-formatter": "^0.4"`.
+Edit `composer.json` and remove `"Hazzard\\Comments\\": "app/comments/src/"` and `"s9e/text-formatter": "^0.4"`.
 
 Edit `config/app.php` and remove `Hazzard\Comments\CommentsServiceProvider::class` from your `providers` array.
 
