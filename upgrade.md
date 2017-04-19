@@ -66,7 +66,9 @@ class UpdateCommentsTable extends Migration
                 ->registerDoctrineTypeMapping('enum', 'string');
 
         Schema::table('comments', function (Blueprint $table) {
-            $table->nullableMorphs('commentable');
+            $table->unsignedInteger('commentable_id')->nullable();
+            $table->string('commentable_type')->nullable();
+            $table->index(['commentable_id', 'commentable_type']);
             $table->string('page_id')->nullable()->change();
             $table->string('author_ip')->nullable()->change();
             $table->string('user_agent')->nullable()->change();
