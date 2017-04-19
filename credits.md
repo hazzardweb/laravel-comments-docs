@@ -15,7 +15,7 @@ Laravel Comments uses the following libraries:
 - [vue-timeago](https://github.com/egoist/vue-timeago)
 - [vue-timeago](https://github.com/egoist/vue-timeago)
 - [vue-i18n](https://github.com/kazupon/vue-i18n)
-- [Zenscroll](https://github.com/zengabor/zenscroll)
+- [MoveTo](https://github.com/hsnaydd/moveTo)
 - [vform](https://github.com/cretueusebiu/vform)
 - [Laravel Mix](https://github.com/jeffreyWay/laravel-mix)
 

@@ -40,6 +40,12 @@ Next, you must install the service provider:
 ];
 ```
 
+For Laravel 5.1 and 5.2 you have to publish the migrations with:
+
+```bash
+php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider" --tag=migrations
+```
+
 Run the migrate command to create the necessary tables:
 
 ```bash
@@ -58,6 +64,8 @@ You can publish the config-file with:
 php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider" --tag=config
 ```
 
+If you use Laravel 5.1 or 5.2 and want to enable mail notifications you must install the [Laravel Notification Channels Backport](http://laravel-notification-channels.com/backport) package.
+
 Head over to the [Usage](usage.md) section to get started.
 
 ## Clone Laravel Comments Demo
@@ -72,6 +80,6 @@ Then you can continue with the [normal installation](#install-laravel-comments).
 
 ### Requirements and Browser Support
 
-Laravel Comments requires Laravel >= 5.3 and supports the following browsers (desktop and mobile): Chrome, Firefox, Opera, Safari, MS Edge and IE10+.
+Laravel Comments requires Laravel >= 5.1.9 and supports the following browsers (desktop and mobile): Chrome, Firefox, Opera, Safari, MS Edge and IE10+.
 
 <style>.docs-content ol { padding-left: 20px; }</style>

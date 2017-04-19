@@ -29,7 +29,7 @@ Each time the assets are compiled you have to run `php artisan vendor:publish --
 Or you edit the `webpack.mix.js` and change the `publicPath` variable:
 
 ```javascript
-const publicPath  = '../public/vendor/comments'
+const publicPath = './../public/vendor/comments'
 ```
 _Assuming that you have the `laravel-comments` folder in your project root directory._
 

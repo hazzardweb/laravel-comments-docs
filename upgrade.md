@@ -1,6 +1,20 @@
 # Upgrade Guide
 
+- [Git](#git)
+- [Upgrading To 2.0.0 From 2.0.0-beta.2](#upgrading-to-200-from-200-beta2)
 - [Upgrading To 2.0 From 1.2](#upgrading-to-20-from-12)
+
+## Git
+
+You can view the all the changes on [git.hazzardweb.com](https://git.hazzardweb.com) by logging in with your Envato account.
+
+## Upgrading To 2.0.0 From 2.0.0-beta.2
+
+- Replace `laravel-comments` and run: 
+
+```bash
+php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider" --tag=public --force
+```
 
 ## Upgrading To 2.0 From 1.2
 

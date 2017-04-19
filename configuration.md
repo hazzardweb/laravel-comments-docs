@@ -23,6 +23,8 @@ Now you can enable captcha from `config/comments.php` or from the __Settings > P
 
 ## Real Time
 
+Real Time only works with Laravel 5.3+.
+
 Before enabling this option you need to have a [broadcast](https://laravel.com/docs/5.4/broadcasting) driver configured. you can either use [Pusher](https://pusher.com) or [Redis+Socket.IO](http://socket.io).
 
 ## Formatting
