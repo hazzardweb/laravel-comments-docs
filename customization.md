@@ -38,7 +38,7 @@ _Assuming that you have the `laravel-comments` folder in your project root direc
 If you wish to customize the views run:
 
 ```bash
-`php artisan vendor:publish --provider=Hazzard\Comments\CommentsServiceProvider --tag=public --force`
+php artisan vendor:publish --provider=Hazzard\Comments\CommentsServiceProvider --tag=views --force
 ```
 
 Then edit them from `resources/views/vendor/comments`.
