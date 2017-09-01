@@ -4,6 +4,13 @@
 
 To get the latest updates go to [git.hazzardweb.com](https://git.hazzardweb.com), log in with your Envato account and then browse repository.
 
+## 2.0.1 (2017-09-01)
+
+- Fixed `api.js` filename for Unix systems.
+- Removed check for settings table.
+- Added support for Laravel 5.5 package discovery.
+- Update internal tooling.
+
 ## 2.0.0 (2017-04-19)
 
 - Added IE10 compatibility.
