@@ -30,7 +30,7 @@ In your terminal run:
 composer require hazzard/laravel-comments *@dev
 ```
 
-Next, you must install the service provider:
+For 5.4 and bellow, add the service provider:
 
 ```php
 // config/app.php
@@ -40,7 +40,7 @@ Next, you must install the service provider:
 ];
 ```
 
-For Laravel 5.1 and 5.2 you have to publish the migrations with:
+For 5.2 and bellow, you have to publish the migrations with:
 
 ```bash
 php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider" --tag=migrations
@@ -64,7 +64,7 @@ You can publish the config-file with:
 php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider" --tag=config
 ```
 
-If you use Laravel 5.1 or 5.2 and want to enable mail notifications you must install the [Laravel Notification Channels Backport](http://laravel-notification-channels.com/backport) package.
+If you use Laravel 5.2 or bellow and want to enable mail notifications you must install the [Laravel Notification Channels Backport](http://laravel-notification-channels.com/backport) package.
 
 Head over to the [Usage](usage.md) section to get started.
 

@@ -32,7 +32,7 @@ By default the avatar is set to Gravatar, but you can return an image url.
 <link href="/vendor/comments/comments.css" rel="stylesheet">
 ```
 
-Or if you use Laravel 5.4+ you can make use of the `mix` helper:
+Or if you use Laravel 5.4+ you can use the `mix` helper:
 
 ```markup
 <link href="{{ mix('comments.css', 'vendor/comments') }}" rel="stylesheet">
@@ -44,7 +44,7 @@ Or if you use Laravel 5.4+ you can make use of the `mix` helper:
 <script src="/vendor/comments/comments.js"></script>
 ```
 
-Again, if you use Laravel 5.4+ you can make use of the `mix` helper:
+Again, if you use Laravel 5.4+ you can use the `mix` helper:
 
 ```markup
 <script src="{{ mix('comments.js', 'vendor/comments') }}"></script>
