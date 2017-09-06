@@ -4,6 +4,10 @@
 
 To get the latest updates go to [git.hazzardweb.com](https://git.hazzardweb.com), log in with your Envato account and then browse repository.
 
+## 2.0.2 (2017-09-06)
+
+- Fixed bug in `CommentsServiceProvider.php` introduced in the previous release.
+
 ## 2.0.1 (2017-09-01)
 
 - Fixed `api.js` filename for Unix systems.
