@@ -4,6 +4,12 @@
 
 To get the latest updates go to [git.hazzardweb.com](https://git.hazzardweb.com), log in with your Envato account and then browse repository.
 
+## 2.0.3 (2018-01-16)
+
+- Fixed config key for model
+- Fixed scroll to comment and pagination
+- Only override config if not cached
+
 ## 2.0.2 (2017-09-06)
 
 - Fixed bug in `CommentsServiceProvider.php` introduced in the previous release.
