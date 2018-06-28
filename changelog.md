@@ -4,6 +4,10 @@
 
 To get the latest updates go to [git.hazzardweb.com](https://git.hazzardweb.com), log in with your Envato account and then browse repository.
 
+## 2.0.4 (2018-06-28)
+
+- Hide reply button for guests (when `allow_guests` is disabled).
+
 ## 2.0.3 (2018-01-16)
 
 - Fixed config key for model

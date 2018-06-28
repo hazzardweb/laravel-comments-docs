@@ -1,16 +1,16 @@
 # Upgrade Guide
 
 - [Git](#git)
-- [Upgrading To 2.0.3](#upgrading-to-203)
+- [Upgrading To 2.0.x](#upgrading-to-20x)
 - [Upgrading To 2.0 From 1.2](#upgrading-to-20-from-12)
 
 ## Git
 
 You can view the all the changes on [git.hazzardweb.com](https://git.hazzardweb.com) by logging in with your Envato account.
 
-## Upgrading To 2.0.3
+## Upgrading To 2.0.x
 
-- Replace `laravel-comments` and run: 
+Replace `laravel-comments` and run: 
 
 ```bash
 php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider" --tag=public --force
