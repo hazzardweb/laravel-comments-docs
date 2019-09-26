@@ -64,6 +64,15 @@ You can publish the config-file with:
 php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider" --tag=config
 ```
 
+Additionally you may want to clear the config, cache, etc:
+
+```bash
+php artisan config:clear
+php artisan route:clear
+php artisan cache:clear
+php artisan view:clear
+```
+
 If you use Laravel 5.2 or bellow and want to enable mail notifications you must install the [Laravel Notification Channels Backport](http://laravel-notification-channels.com/backport) package.
 
 Head over to the [Usage](usage.md) section to get started.

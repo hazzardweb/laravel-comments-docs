@@ -16,6 +16,15 @@ Replace `laravel-comments` and run:
 php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider" --tag=public --force
 ```
 
+Additionally you may want to clear the config, cache, etc:
+
+```bash
+php artisan config:clear
+php artisan route:clear
+php artisan cache:clear
+php artisan view:clear
+```
+
 ## Upgrading To 2.0 From 1.2
 
 Since this is a major update only the database tables can be upgraded.
