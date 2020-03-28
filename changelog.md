@@ -4,9 +4,13 @@
 
 To get the latest updates go to [git.hazzardweb.com](https://git.hazzardweb.com), log in with your Envato account and then browse repository.
 
+## 2.0.6 (2020-03-28)
+
+- Added support for Laravel 7
+
 ## 2.0.5 (2019-09-26)
 
-- Added support for Laravel 6.0
+- Added support for Laravel 6
 
 ## 2.0.4 (2018-06-28)
 
