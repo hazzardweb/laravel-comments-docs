@@ -8,7 +8,7 @@
 
 If you wish to edit something in the JavaScript/Sass files, you have to compile them with [Laravel Mix](http://laravel.com/docs/5.4/mix).
 
-From your terminal, cd into the `laravel-comments` directory and install the npm dependencies:
+From your terminal, cd into the `laravel-comments` directory and install the npm dependencies (Node >= 8.10 required):
 
 With npm:
 
