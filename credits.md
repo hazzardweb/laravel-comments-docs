@@ -3,10 +3,10 @@
 Laravel Comments uses the following libraries:
 
 ### Front-end
-- [Vue 2](http://vuejs.org)
-- [Prism](http://prismjs.com)
+- [Vue 2](https://vuejs.org)
+- [Prism](https://prismjs.com)
 - [Autosize](http://www.jacklmoore.com/autosize)
-- [Bootstrap 4](http://getbootstrap.com)
+- [Bootstrap 4](https://getbootstrap.com)
 - [axios](https://github.com/mzabriskie/axios)
 - [iFrame Resizer](https://github.com/davidjbradshaw/iframe-resizer)
 - [Laravel Echo](https://github.com/tlaverdure/laravel-echo-server)
@@ -20,7 +20,7 @@ Laravel Comments uses the following libraries:
 - [Laravel Mix](https://github.com/jeffreyWay/laravel-mix)
 
 ### Back-end
-- [Laravel](http://laravel.com)
+- [Laravel](https://laravel.com)
 - [TextFormatter](https://github.com/s9e/TextFormatter)
 - [reCAPTCHA](https://github.com/google/recaptcha)
 - [Akismet](https://github.com/OpenClassrooms/Akismet)

@@ -7,7 +7,7 @@
 
 ## Prerequisites
 
-This guide assumes that you already know how to [install](http://laravel.com/docs/5.4/installation) and configure Laravel and have the latest version of [Composer](https://getcomposer.org/) installed.
+This guide assumes that you already know how to [install](https://laravel.com/docs/8.x/installation) and configure Laravel and have the latest version of [Composer](https://getcomposer.org/) installed.
 
 ## Install Laravel Comments
 
@@ -28,22 +28,6 @@ In your terminal run:
 
 ```bash
 composer require hazzard/laravel-comments *@dev
-```
-
-For 5.4 and bellow, add the service provider:
-
-```php
-// config/app.php
-'providers' => [
-    ...
-    Hazzard\Comments\CommentsServiceProvider::class,
-];
-```
-
-For 5.2 and bellow, you have to publish the migrations with:
-
-```bash
-php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider" --tag=migrations
 ```
 
 Run the migrate command to create the necessary tables:
@@ -73,8 +57,6 @@ php artisan cache:clear
 php artisan view:clear
 ```
 
-If you use Laravel 5.2 or bellow and want to enable mail notifications you must install the [Laravel Notification Channels Backport](http://laravel-notification-channels.com/backport) package.
-
 Head over to the [Usage](usage.md) section to get started.
 
 ## Clone Laravel Comments Demo
@@ -89,6 +71,8 @@ Then you can continue with the [normal installation](#install-laravel-comments).
 
 ### Requirements and Browser Support
 
-Laravel Comments requires Laravel >= 5.1.9 and supports the following browsers (desktop and mobile): Chrome, Firefox, Opera, Safari, MS Edge and IE10+.
+- Laravel: 6, 7, 8
+- PHP: 7.2, 7.3, 7.4, 8.0
+- Browsers: Chrome, Firefox, Opera, Safari, Microsoft Edge and IE10+
 
 <style>.docs-content ol { padding-left: 20px; }</style>

@@ -2,7 +2,7 @@
 
 <hr>
 
-To listen for an event, first you need to [define a listener](http://laravel.com/docs/5.4/events#defining-listeners), then [register](http://laravel.com/docs/5.4/events#registering-events-and-listeners) it in `EventServiceProvider`:
+To listen for an event, first you need to [define a listener](https://laravel.com/docs/8.x/events#defining-listeners), then [register](https://laravel.com/docs/8.x/events#registering-events-and-listeners) it in `EventServiceProvider`:
 
 __app/Providers/EventServiceProvider.php__
 

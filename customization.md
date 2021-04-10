@@ -6,7 +6,7 @@
 
 ## Assets
 
-If you wish to edit something in the JavaScript/Sass files, you have to compile them with [Laravel Mix](http://laravel.com/docs/5.4/mix).
+If you wish to edit something in the JavaScript/Sass files, you have to compile them with [Laravel Mix](https://laravel.com/docs/8.x/mix).
 
 From your terminal, cd into the `laravel-comments` directory and install the npm dependencies (Node >= 8.10 required):
 
@@ -16,10 +16,10 @@ With npm:
 npm install
 ```
 
-Or the recommended way, with [Yarn](http://yarnpkg.com/):
+Or with yarn:
 
 ```bash
-yarn 
+yarn
 ```
 
 After you make your changes run `npm run build` to compile the assets.
@@ -45,4 +45,4 @@ Then edit them from `resources/views/vendor/comments`.
 
 ## Translations
 
-See [Overriding Vendor Language Files](https://laravel.com/docs/5.4/localization#overriding-package-language-files).
+See [Overriding Vendor Language Files](https://laravel.com/docs/8.x/localization#overriding-package-language-files).

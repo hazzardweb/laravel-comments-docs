@@ -25,7 +25,7 @@ Now you can enable captcha from `config/comments.php` or from the __Settings > P
 
 Real Time only works with Laravel 5.3+.
 
-Before enabling this option you need to have a [broadcast](https://laravel.com/docs/5.4/broadcasting) driver configured. you can either use [Pusher](https://pusher.com) or [Redis+Socket.IO](http://socket.io).
+Before enabling this option you need to have a [broadcast](https://laravel.com/docs/8.x/broadcasting) driver configured. you can either use [Pusher](https://pusher.com) or [Redis+Socket.IO](https://socket.io).
 
 ## Formatting
 
@@ -33,7 +33,7 @@ The script uses the [TextFormatter](https://github.com/s9e/TextFormatter) packag
 
 By default you have some options to choose from, but if you want to add even more options you can configure the formatter however you want using the `Hazzard\Comments\Events\FormatterConfigurator` [event](events.md):
 
-First [define a listener](http://laravel.com/docs/5.4/events#defining-listeners), then [register](http://laravel.com/docs/5.4/events#registering-events-and-listeners) it in `EventServiceProvider`:
+First [define a listener](https://laravel.com/docs/8.x/events#defining-listeners), then [register](https://laravel.com/docs/8.x/events#registering-events-and-listeners) it in `EventServiceProvider`:
 
 __app/Providers/EventServiceProvider.php__
 
@@ -72,6 +72,6 @@ class ConfigureFormatter
 }
 ```
 
-Learn more about the [TextFormatter](http://s9etextformatter.readthedocs.org/).
+Learn more about the [TextFormatter](https://s9etextformatter.readthedocs.io).
 
 > Notice: Each time you change something related to the formatter via the config file, you must run `php artisan cache:clear` to clear the formatter configuration cache. 

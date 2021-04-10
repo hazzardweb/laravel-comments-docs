@@ -4,6 +4,12 @@
 
 To get the latest updates go to [git.hazzardweb.com](https://git.hazzardweb.com), log in with your Envato account and then browse repository.
 
+## 3.0.0 (2021-04-10)
+
+- Added support for Laravel 8
+- Added support for PHP 8
+- Dropped support for Laravel 5.*
+
 ## 2.0.7 (2020-03-29)
 
 - Update npm packages to support Node 12+
