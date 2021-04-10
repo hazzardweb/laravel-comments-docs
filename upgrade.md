@@ -1,7 +1,7 @@
 # Upgrade Guide
 
 - [Git](#git)
-- [Upgrading To 3.0 From 2.x](#upgrading-to-30-from-7x)
+- [Upgrading To 3.0 From 2.x](#upgrading-to-30-from-2x)
 
 ## Git
 
