@@ -43,6 +43,14 @@ php artisan vendor:publish --provider=Hazzard\Comments\CommentsServiceProvider -
 
 Then edit them from `resources/views/vendor/comments`.
 
+## Migrations
+
+If you wish to customize the migrations publish them before migrating:
+
+```bash
+php artisan vendor:publish --provider="Hazzard\Comments\CommentsServiceProvider" --tag=migrations
+```
+
 ## Translations
 
 See [Overriding Vendor Language Files](https://laravel.com/docs/8.x/localization#overriding-package-language-files).
