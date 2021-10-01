@@ -4,6 +4,12 @@
 
 To get the latest updates go to [git.hazzardweb.com](https://git.hazzardweb.com), log in with your Envato account and then browse repository.
 
+## 4.0.0 (2021-10-10)
+
+- Upgraded to Bootstrap 5.1.
+- Update npm dependencies.
+- Dropped IE support.
+
 ## 3.0.0 (2021-04-10)
 
 - Added support for Laravel 8

@@ -73,6 +73,6 @@ Then you can continue with the [normal installation](#install-laravel-comments).
 
 - Laravel: 6, 7, 8
 - PHP: 7.2, 7.3, 7.4, 8.0
-- Browsers: Chrome, Firefox, Opera, Safari, Microsoft Edge and IE10+
+- Browsers: Chrome, Firefox, Opera, Safari, Edge
 
 <style>.docs-content ol { padding-left: 20px; }</style>

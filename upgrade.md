@@ -1,13 +1,13 @@
 # Upgrade Guide
 
 - [Git](#git)
-- [Upgrading To 3.0 From 2.x](#upgrading-to-30-from-2x)
+- [Upgrading To 4.0 From 3.x](#upgrading-to-40-from-3x)
 
 ## Git
 
 You can view the all the changes on [git.hazzardweb.com](https://git.hazzardweb.com) by logging in with your Envato account.
 
-## Upgrading To 3.0 From 2.x
+## Upgrading To 4.0 From 3.x
 
 Replace `laravel-comments` and run: 
 
